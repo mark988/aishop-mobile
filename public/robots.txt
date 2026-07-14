@@ -1,0 +1,81 @@
+# AI Shop — robots.txt
+# Reference: https://www.robotstxt.org/
+
+# ---- Default rule for all crawlers ----
+User-agent: *
+
+# Block private / user-only / transactional pages.
+Disallow: /cart
+Disallow: /checkout
+Disallow: /order-success
+Disallow: /profile
+Disallow: /profile/
+Disallow: /orders
+Disallow: /favorites
+Disallow: /points
+Disallow: /coupons
+Disallow: /login
+Disallow: /register
+
+# Block API endpoints.
+Disallow: /api/
+
+# Block search-result and tracking query strings.
+Disallow: /*?search=
+Disallow: /*?q=
+Disallow: /*?utm_*
+
+# Allow everything else.
+Allow: /
+
+# ---- Explicit allows for known good bots ----
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ---- Block known content-scraping / AI training bots ----
+# Remove these blocks if you want your content used for LLM training / answer engines.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# ---- Sitemaps ----
+# Replace the host with your real domain before deploying.
+Sitemap: https://www.ozhousemm.com/sitemap-index.xml

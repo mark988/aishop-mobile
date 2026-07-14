@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#0284c7" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="AI Shop" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Primary Meta Tags -->
+    <title>AI Shop — Smart Shopping Platform with AI Recommendations & Assistant</title>
+    <meta name="title" content="AI Shop — Smart Shopping Platform with AI Recommendations & Assistant" />
+    <meta name="description" content="Discover AI Shop, an AI-driven e-commerce platform offering personalized product recommendations, a smart shopping assistant, fast shipping, and a 7-day refund policy." />
+    <meta name="keywords" content="AI shopping, AI shop, smart shopping assistant, personalized recommendations, online store, e-commerce, AI recommendations, shopping platform" />
+    <meta name="author" content="AI Shop" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+
+    <!-- Canonical: 响应式同域,与 PC 共用同一 URL -->
+    <link rel="canonical" href="https://www.ozhousemm.com/" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AI Shop" />
+    <meta property="og:url" content="https://www.ozhousemm.com/" />
+    <meta property="og:title" content="AI Shop — Smart Shopping Platform with AI Recommendations & Assistant" />
+    <meta property="og:description" content="Discover AI Shop, an AI-driven e-commerce platform offering personalized product recommendations, a smart shopping assistant, fast shipping, and a 7-day refund policy." />
+    <meta property="og:image" content="https://www.ozhousemm.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.ozhousemm.com/" />
+    <meta name="twitter:title" content="AI Shop — Smart Shopping Platform with AI Recommendations & Assistant" />
+    <meta name="twitter:description" content="Discover AI Shop, an AI-driven e-commerce platform offering personalized product recommendations, a smart shopping assistant, fast shipping, and a 7-day refund policy." />
+    <meta name="twitter:image" content="https://www.ozhousemm.com/og-image.png" />
+
+    <!-- Performance hints -->
+    <link rel="preconnect" href="https://dashscope.aliyuncs.com" crossorigin />
+    <link rel="dns-prefetch" href="https://dashscope.aliyuncs.com" />
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AI Shop",
+      "url": "https://www.ozhousemm.com/",
+      "logo": "https://www.ozhousemm.com/logo.png",
+      "sameAs": []
+    }
+    </script>
+
+    <!-- Structured Data: WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "AI Shop",
+      "url": "https://www.ozhousemm.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.ozhousemm.com/products?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Structured Data: OnlineStore -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "OnlineStore",
+      "name": "AI Shop",
+      "url": "https://www.ozhousemm.com/",
+      "description": "AI-driven e-commerce platform with personalized recommendations and a smart shopping assistant.",
+      "currenciesAccepted": "CNY",
+      "paymentAccepted": "Credit Card, Bank Transfer"
+    }
+    </script>
+
+    <!-- 网站统计埋点脚本 -->
+    <script>
+      // 动态加载本地tracker.js
+      (function() {
+        var script = document.createElement('script');
+        // 加载本地 tracker.js（已配置完整后端URL）
+        script.src = '/tracker.js';
+        script.onload = function() {
+          console.log('✅ Analytics tracker loaded successfully');
+        };
+        script.onerror = function() {
+          console.warn('⚠️ Analytics tracker not available');
+        };
+        document.head.appendChild(script);
+      })();
+    </script>
+    <style>
+      /* Prevent zoom on inputs */
+      input, select, textarea {
+        font-size: 16px !important;
+      }
+      /* Prevent horizontal scroll */
+      body, html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- SEO fallback for crawlers that execute zero JavaScript. -->
+    <noscript>
+      <h1>AI Shop — Smart Shopping Platform</h1>
+      <p>AI Shop is an AI-driven e-commerce platform offering personalized product recommendations,
+         a smart shopping assistant, fast shipping, and a 7-day refund policy.</p>
+      <p>This site requires JavaScript. Please enable JavaScript in your browser to continue.</p>
+    </noscript>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

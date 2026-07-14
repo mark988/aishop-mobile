@@ -1,0 +1,420 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mobile-first responsive design */
+@layer base {
+  html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* Additional mobile overflow prevention */
+@media screen and (max-width: 768px) {
+  html, body, #root, main, div, section {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@layer components {
+  /* Mobile-optimized button styles */
+  .btn-mobile {
+    @apply px-4 py-3 rounded-xl font-medium transition-all duration-200 active:scale-95 min-h-[44px] flex items-center justify-center;
+  }
+  
+  .btn-primary-mobile {
+    @apply btn-mobile bg-primary-600 text-white shadow-lg active:bg-primary-700;
+  }
+  
+  .btn-secondary-mobile {
+    @apply btn-mobile bg-gray-100 text-gray-700 active:bg-gray-200;
+  }
+  
+  /* Mobile card styles */
+  .card-mobile {
+    @apply bg-white rounded-2xl shadow-soft border border-gray-100 overflow-hidden;
+  }
+  
+  /* Mobile input styles */
+  .input-mobile {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 transition-colors min-h-[44px];
+  }
+  
+  /* Mobile navigation styles */
+  .nav-item-mobile {
+    @apply flex items-center justify-center p-3 rounded-xl transition-colors min-h-[44px];
+  }
+  
+  /* Mobile safe areas */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+  
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  /* Mobile scrolling */
+  .scroll-smooth-mobile {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Mobile touch feedback */
+  .touch-feedback {
+    @apply active:scale-95 transition-transform duration-150;
+  }
+  
+  /* Mobile typography */
+  .text-mobile-title {
+    @apply text-xl font-bold text-gray-900;
+  }
+  
+  .text-mobile-subtitle {
+    @apply text-lg font-semibold text-gray-800;
+  }
+  
+  .text-mobile-body {
+    @apply text-base text-gray-700;
+  }
+  
+  .text-mobile-caption {
+    @apply text-sm text-gray-600;
+  }
+  
+  /* Mobile spacing */
+  .container-mobile {
+    @apply max-w-sm mx-auto px-4;
+  }
+  
+  .section-mobile {
+    @apply py-6;
+  }
+  
+  /* Mobile animations */
+  .slide-up-mobile {
+    animation: slideUpMobile 0.3s ease-out;
+  }
+  
+  .fade-in-mobile {
+    animation: fadeInMobile 0.3s ease-out;
+  }
+}
+
+@layer utilities {
+  /* Mobile-specific utilities */
+  .h-screen-mobile {
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for mobile */
+  }
+  
+  .min-h-screen-mobile {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  
+  .w-screen-mobile {
+    width: 100vw;
+    width: 100dvw;
+  }
+  
+  /* Touch-friendly sizing */
+  .touch-size {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  /* Mobile-optimized shadows */
+  .shadow-mobile {
+    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shadow-mobile-lg {
+    box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Force mobile grid layouts with maximum specificity */
+@media screen and (max-width: 768px) {
+  .grid-mobile-2,
+  .mobile-grid-2,
+  div.grid-mobile-2,
+  div.mobile-grid-2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  
+  /* Ensure child elements don't break grid */
+  .grid-mobile-2 > *,
+  .mobile-grid-2 > * {
+    display: block !important;
+    width: auto !important;
+    max-width: 100% !important;
+  }
+  
+  .grid-mobile-4,
+  .mobile-grid-4,
+  div.grid-mobile-4,
+  div.mobile-grid-4 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  
+  /* Ensure child elements don't break grid */
+  .grid-mobile-4 > *,
+  .mobile-grid-4 > * {
+    display: block !important;
+    width: auto !important;
+    max-width: 100% !important;
+  }
+  
+  .grid-mobile-1,
+  .mobile-grid-1,
+  div.grid-mobile-1,
+  div.mobile-grid-1 {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+}
+
+/* Additional mobile-specific grid enforcement with higher specificity */
+@media screen and (max-device-width: 768px) {
+  body .grid-mobile-2,
+  body .mobile-grid-2,
+  body div.grid-mobile-2,
+  body div.mobile-grid-2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  body .grid-mobile-4,
+  body .mobile-grid-4,
+  body div.grid-mobile-4,
+  body div.mobile-grid-4 {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Touch device specific overrides with higher specificity */
+@media (pointer: coarse) {
+  html body .grid-mobile-2,
+  html body .mobile-grid-2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  
+  html body .grid-mobile-4,
+  html body .mobile-grid-4 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+}
+
+/* Universal mobile grid enforcement */
+@media only screen and (max-width: 767px) {
+  [class*="grid-mobile-2"],
+  [class*="mobile-grid-2"] {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  
+  [class*="grid-mobile-4"],
+  [class*="mobile-grid-4"] {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+}
+
+/* Mobile animations */
+@keyframes slideUpMobile {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInMobile {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile focus styles */
+@media (hover: none) and (pointer: coarse) {
+  .focus\:ring-2:focus {
+    ring-width: 0;
+  }
+  
+  .focus\:outline-none:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+}
+
+/* Mobile-specific overrides */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .text-xs {
+    font-size: 0.75rem;
+  }
+  
+  .text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .text-base {
+    font-size: 1rem;
+  }
+  
+  .text-lg {
+    font-size: 1.125rem;
+  }
+
+  .text-xl {
+    font-size: 1.25rem;
+  }
+}
+
+/* ============================================================
+   AI Chat 入口按钮 - 调皮的袋鼠动画 (与 PC 端保持一致)
+   ============================================================ */
+@keyframes ai-chat-hop {
+  0%, 32%, 68%, 100% { transform: translateY(0) rotate(0deg); }
+  10%               { transform: translateY(-2px) rotate(-4deg); }
+  20%               { transform: translateY(0) rotate(4deg); }
+  42%               { transform: translateY(-8px) scale(1.06) rotate(-10deg); }
+  50%               { transform: translateY(-10px) scale(1.06) rotate(0deg); }
+  58%               { transform: translateY(-8px) scale(1.06) rotate(10deg); }
+  72%               { transform: translateY(-2px) rotate(-2deg); }
+  82%               { transform: translateY(0) rotate(2deg); }
+}
+
+.ai-chat-hop {
+  display: inline-block;
+  animation: ai-chat-hop 3.2s ease-in-out infinite;
+  transform-origin: 50% 80%;
+}
+
+@keyframes ai-chat-tip-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+.ai-chat-tip-float {
+  animation: ai-chat-tip-float 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-chat-hop,
+  .ai-chat-tip-float { animation: none; }
+}
